@@ -27,8 +27,14 @@ public class Tapuntas {
        usuarios.put(nombreUsuario, new Usuario(nombreUsuario,contraseña,direccionCorreo));
     }
     
-    public void añadirVehiculo(String nombreUsuario,String matricula, String modelo, String color, int numeroPlazas, String categoria, String confor){
-        
+    public void añadirVehiculo(String nombreUsuario,String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor) throws Exception{
+       Vehiculo vehiculo = null;
+       for (int i=0; i<usuarios.size(); i++){
+          vehiculo = usuarios.get(i).buscarVehiculo(matricula);
+       }
+       if(vehiculo == null) throw new Exception("ya existe otro vehículo en el sistema con esa matrícula");
+       Usuario usuario = buscarUsuario(nombreUsuario);
+       //(nombreUsuario, new Vehiculo(matricula,marca,modelo,color,numeroPlazas,categoria,confor));
     }
     
     public ArrayList<PlanAlquiler> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
