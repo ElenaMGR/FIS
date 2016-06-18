@@ -5,10 +5,39 @@
  */
 package ModeloTapuntas;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author elena
  */
-class PlanAlquiler {
+public class PlanAlquiler {
+    private boolean visible;
+    private GregorianCalendar primerDiaAlquiler;
+    private GregorianCalendar ultimoDiaAlquiler;
+    private double costeAlquilerAlDia;
+    private String ciudadRecogida;
+    private Vehiculo vehiculo;
+    
+    PlanAlquiler(Vehiculo unVehiculo, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida){
+       
+    }
+    
+    ArrayList<String> obtenerdatosPA(){
+        return null;
+    }
+    
+    void eliminarVehiculo (){
+        
+    }
+    
+    ArrayList<String> obtenerdatosPlanAlquiler(){
+        return null;
+    }
+    
+    void modificarVisibilidad (boolean visible){
+        this.visible=visible;
+    }
     
 }
