@@ -5,6 +5,8 @@
  */
 package ModeloTapuntas;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +25,54 @@ public class Tapuntas {
     public void altaRegistro(String nombreUsuario, String contraseña, String direccionCorreo) throws Exception {
        if(usuarios.containsKey(nombreUsuario)) throw new Exception("ya existe un usuario con ese nombre de usuario");
        usuarios.put(nombreUsuario, new Usuario(nombreUsuario,contraseña,direccionCorreo));
+    }
+    
+    public void añadirVehiculo(String nombreUsuario,String matricula, String modelo, String color, int numeroPlazas, String categoria, String confor){
+        
+    }
+    
+    public ArrayList<PlanAlquiler> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
+       return null; 
+    }
+    
+    public void definirPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida){
+        
+    }
+    
+    public void eliminarVehiculoPropietario(String nombreUsuario, String matricula){
+        
+    }
+    
+    public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion){
+        
+    }
+    
+    public ArrayList<PlanAlquiler> obtenerPlanesAlquiler (String nombreUsuario){
+      return null;  
+    }
+    
+    public ArrayList<String> consultarPerfil (String nombreUsuario){
+        return null;
+    }
+    
+    public void ofertarPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, String matricula){
+        
+    }
+    
+    private boolean existeUsuario (String nombreUsuario){
+        return false;
+    }
+    
+    private Usuario buscarUsuario (String nombreUsuario){
+       return null; 
+    }
+    
+    private void ordenarOfertas (ArrayList<String> listaOfertas){
+        
+    }
+    
+    private boolean existeVehiculo (String matricula){
+        return false;
     }
     
 }
