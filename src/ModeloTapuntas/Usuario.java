@@ -39,7 +39,8 @@ class Usuario {
     }
     
     void nuevoVehiculo (String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor){
-        
+        Vehiculo vehiculo = new Vehiculo (matricula,marca,modelo,color,numeroPlazas,categoria,confor);
+        vehiculos.add(vehiculo);
     }
     
     ArrayList<PlanAlquiler> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
