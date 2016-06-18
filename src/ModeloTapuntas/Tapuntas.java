@@ -8,6 +8,7 @@ package ModeloTapuntas;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -23,18 +24,20 @@ public class Tapuntas {
     }
 
     public void altaRegistro(String nombreUsuario, String contraseña, String direccionCorreo) throws Exception {
-       if(usuarios.containsKey(nombreUsuario)) throw new Exception("ya existe un usuario con ese nombre de usuario");
-       usuarios.put(nombreUsuario, new Usuario(nombreUsuario,contraseña,direccionCorreo));
+        if(usuarios.containsKey(nombreUsuario)) throw new Exception("ya existe un usuario con ese nombre de usuario");
+        usuarios.put(nombreUsuario, new Usuario(nombreUsuario,contraseña,direccionCorreo));
     }
     
     public void añadirVehiculo(String nombreUsuario,String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor) throws Exception{
-       Vehiculo vehiculo = null;
-       for (int i=0; i<usuarios.size(); i++){
-          vehiculo = usuarios.get(i).buscarVehiculo(matricula);
-       }
-       if(vehiculo == null) throw new Exception("ya existe otro vehículo en el sistema con esa matrícula");
-       Usuario usuario = buscarUsuario(nombreUsuario);
-       //(nombreUsuario, new Vehiculo(matricula,marca,modelo,color,numeroPlazas,categoria,confor));
+        Vehiculo vehiculo = null;
+        Iterator it = usuarios.entrySet().iterator();
+        while (it.hasNext() && vehiculo == null) {
+            Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
+            vehiculo = pair.getValue().buscarVehiculo(matricula);
+        }
+        if(vehiculo == null) throw new Exception("ya existe otro vehículo en el sistema con esa matrícula");
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        usuario.nuevoVehiculo(matricula,marca,modelo,color,numeroPlazas,categoria,confor);
     }
     
     public ArrayList<PlanAlquiler> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
