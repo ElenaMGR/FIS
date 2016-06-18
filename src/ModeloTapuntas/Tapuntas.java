@@ -41,7 +41,15 @@ public class Tapuntas {
     }
     
     public ArrayList<PlanAlquiler> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-       return null; 
+        ArrayList<ArrayList<String>> datosPAUsuario = new ArrayList<ArrayList<String>>();
+        
+        Iterator it = usuarios.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
+            datosPAUsuario.add(pair.getValue().obtenerPlanesQueCumplanRequisitos(ciudadRecogida, fechaInicio, fechaFin));
+        }
+        
+        return null; 
     }
     
     public void definirPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida){
