@@ -28,7 +28,16 @@ class Vehiculo {
     }
     
     ArrayList<String> obtenerDatosVehiculo(){
-        return null;
+        ArrayList<String> datosVehiculo = new ArrayList<String>();
+        datosVehiculo.add(marca);
+        datosVehiculo.add(modelo);
+        datosVehiculo.add(confor);
+        datosVehiculo.add(numeroPlazas+"");
+        datosVehiculo.add(color);
+        datosVehiculo.add(categoria);
+        datosVehiculo.add(matricula);
+        
+        return datosVehiculo;
     }
         
     boolean estasDisponible (GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
