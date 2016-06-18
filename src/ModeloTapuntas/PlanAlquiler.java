@@ -25,7 +25,16 @@ public class PlanAlquiler {
     }
     
     ArrayList<String> obtenerdatosPA(){
-        return null;
+        ArrayList<String> datosPA = new ArrayList<String>();
+        datosPA.add(costeAlquilerAlDia+"");
+        
+        ArrayList<String> datosVehiculo = new ArrayList<String>();
+        datosVehiculo = vehiculo.obtenerDatosVehiculo();
+        for (int i=0; i<datosVehiculo.size(); i++){
+            datosPA.add(datosVehiculo.get(i));
+        }
+        
+        return datosPA;
     }
     
     void eliminarVehiculo (){
@@ -38,6 +47,18 @@ public class PlanAlquiler {
     
     void modificarVisibilidad (boolean visible){
         this.visible=visible;
+    }
+    
+    String ciudadRecogida(){
+        return ciudadRecogida;
+    }
+    
+    GregorianCalendar primerDiaAlqquiler(){
+        return primerDiaAlquiler;
+    }
+    
+    GregorianCalendar ultimoDiaAlqquiler(){
+        return ultimoDiaAlquiler;
     }
     
 }
