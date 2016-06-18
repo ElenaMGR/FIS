@@ -23,7 +23,8 @@ class Usuario {
     private String telefono;
     private String breveDescripcionPersonal;
     private ArrayList<TipoTransaccion> preferenciaCobro;
- 
+    private ArrayList<PlanAlquiler> planesAlquiler;
+    private ArrayList<Vehiculo> vehiculos;
 
     Usuario(String nombreUsuario, String contraseña, String direccionCorreo) {
       this.nombreUsuario= nombreUsuario;
