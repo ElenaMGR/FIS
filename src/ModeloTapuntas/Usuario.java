@@ -43,8 +43,25 @@ class Usuario {
         vehiculos.add(vehiculo);
     }
     
-    ArrayList<PlanAlquiler> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        return null;
+    ArrayList<String> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
+        ArrayList<String> datosPAUsuario = new ArrayList<String>();
+        datosPAUsuario.add(nombre);
+        datosPAUsuario.add(preferenciaCobro.toString());
+        ArrayList<String> datosPA = new ArrayList<String>();
+        
+        PlanAlquiler pa;
+        for (int i=0; i<planesAlquiler.size(); i++){
+            pa = planesAlquiler.get(i);
+            if (ciudadRecogida == pa.ciudadRecogida() && !(fechaInicio.before(pa.primerDiaAlqquiler())) && !(fechaFin.after(pa.ultimoDiaAlqquiler()))){
+                datosPA = pa.obtenerdatosPA();
+            }
+        }
+        
+        for (int i=0; i<datosPA.size(); i++){
+            datosPAUsuario.add(datosPA.get(i));
+        }
+        
+        return datosPAUsuario;
     }
     
     void definirPlanAlquiler (String matricula, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida){
