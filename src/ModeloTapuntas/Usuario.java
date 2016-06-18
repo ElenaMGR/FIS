@@ -40,7 +40,7 @@ class Usuario {
     }
     
     ArrayList<PlanAlquiler> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        
+        return null;
     }
     
     void definirPlanAlquiler (String matricula, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida){
@@ -56,11 +56,11 @@ class Usuario {
     }
     
     ArrayList<PlanAlquiler> obtenerPlanesAlquiler (){
-        
+        return null;
     }
     
     ArrayList<String> consultarPerfil(){
-        
+        return null;
     }
     
     void ofertarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
@@ -68,10 +68,10 @@ class Usuario {
     }
     
     Vehiculo buscarVehiculo (String matricula){
-        
+        return null;
     }
     
     PlanAlquiler buscarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
-        
+        return null;
     }
 }
