@@ -30,9 +30,11 @@ class Usuario {
       this.nombreUsuario= nombreUsuario;
       this.contraseña = contraseña;
       this.direccionCorreo = direccionCorreo;
+      
+      modificarVisibilidad(false);
     }
     
-    void modificarVisiblididad(boolean visibilidad){
+    void modificarVisibilidad(boolean visibilidad){
         this.visibilidad=visibilidad;
     }
     
