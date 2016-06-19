@@ -276,6 +276,15 @@ public class pruebaTapuntas {
                         
                         aViajar.obtenerPlanesAlquiler(nombreUsuario);
                         System.out.print("++++++  Operación realizada con éxito ++++++");
+                        
+                        ArrayList<ArrayList<String>> planesAlquiler = new ArrayList<>();
+                        ArrayList<String> pa = new ArrayList<>();
+                        for (int i=0; i<planesAlquiler.size() ; i++){
+                            pa = planesAlquiler.get(i);
+                            for (int j=0; j<pa.size(); j++){
+                                System.out.println(pa.toString());
+                            }
+                        }
                                                 
                     break;
 
@@ -284,8 +293,8 @@ public class pruebaTapuntas {
                     break;
 
                     case 33: /* Buscar ofertas de planes de alquiler  */
-                        ArrayList<ArrayList<String>> ofertasAlquiler = new ArrayList<ArrayList<String>>();
-                        ArrayList<String> pa = new ArrayList<String>();
+                        ArrayList<ArrayList<String>> ofertasAlquiler = new ArrayList<>();
+                        pa = new ArrayList<>();
                         System.out.print("Ciudad de Recogida:");
                         ciudadRecogida = in.nextLine();
                         
