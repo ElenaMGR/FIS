@@ -107,8 +107,17 @@ class Usuario {
         modificarVisibilidad(true);
     }
     
-    ArrayList<PlanAlquiler> obtenerPlanesAlquiler (){
-        return null;
+    ArrayList<String> obtenerPlanesAlquiler (){
+        ArrayList<String> datosPlanAlquiler = new ArrayList<>();
+        PlanAlquiler pa;
+        for (int i=0; i<planesAlquiler.size(); i++){
+            pa = planesAlquiler.get(i);
+            if (!pa.getVisibilidad() && pa.vigente()){
+                datosPlanAlquiler = pa.obtenerdatosPlanAlquiler();
+            }
+        }
+        
+        return datosPlanAlquiler;
     }
     
     ArrayList<String> consultarPerfil(){
