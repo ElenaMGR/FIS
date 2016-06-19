@@ -134,7 +134,8 @@ class Usuario {
     }
     
     void ofertarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
-        
+        PlanAlquiler pa = buscarPlanAlquiler(fechaInicio, matricula);
+        pa.modificarVisibilidad(true);
     }
     
     Vehiculo buscarVehiculo (String matricula){
