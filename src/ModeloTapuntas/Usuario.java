@@ -75,7 +75,11 @@ class Usuario {
     }
     
     void introducirPerfil (String nombre, String telefono, String breceDescripcion, ArrayList<TipoTransaccion> preferenciaCobro){
-        
+        this.nombre=nombre;
+        this.telefono=telefono;
+        this.breveDescripcionPersonal=breceDescripcion;
+        this.preferenciaCobro=preferenciaCobro;
+        modificarVisibilidad(true);
     }
     
     ArrayList<PlanAlquiler> obtenerPlanesAlquiler (){
