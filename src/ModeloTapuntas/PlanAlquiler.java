@@ -5,6 +5,8 @@
  */
 package ModeloTapuntas;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -46,7 +48,20 @@ public class PlanAlquiler {
     }
     
     ArrayList<String> obtenerdatosPlanAlquiler(){
-        return null;
+        ArrayList<String> datosPlanAlquiler = new ArrayList<>();
+        datosPlanAlquiler.add(vehiculo.obtenerMatricula());
+        
+        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy"); //Da formato al día
+        String fechaString = formatoFecha.format(primerDiaAlquiler.getTime());
+        datosPlanAlquiler.add(fechaString);
+        
+        fechaString = formatoFecha.format(ultimoDiaAlquiler.getTime());
+        datosPlanAlquiler.add(fechaString);
+        
+        datosPlanAlquiler.add(costeAlquilerAlDia+"");
+        datosPlanAlquiler.add(ciudadRecogida);
+        
+        return datosPlanAlquiler;
     }
     
     void modificarVisibilidad (boolean visible){
