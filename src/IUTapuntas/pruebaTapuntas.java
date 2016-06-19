@@ -239,8 +239,8 @@ public class pruebaTapuntas {
                         System.out.print("Ciudad de Recogida:");
                         ciudadRecogida = in.nextLine();
                         
-                        System.out.print("Fecha de Inicio:");                        
-                        System.out.println("dia : ");
+                        System.out.println("Fecha de Inicio:");                        
+                        System.out.print("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
@@ -248,8 +248,8 @@ public class pruebaTapuntas {
                         año = Integer.parseInt(in.nextLine());
                         fechaInicio = new GregorianCalendar(año,mes-1,dia);
                         
-                        System.out.print("Fecha Fin:");                       
-                        System.out.println("dia : ");
+                        System.out.println("Fecha Fin:");                       
+                        System.out.print("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
@@ -276,8 +276,8 @@ public class pruebaTapuntas {
                         System.out.print("Ciudad de Recogida:");
                         ciudadRecogida = in.nextLine();
                         
-                        System.out.print("Fecha de Inicio:");                        
-                        System.out.println("dia : ");
+                        System.out.println("Fecha de Inicio:");                        
+                        System.out.print("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
@@ -285,8 +285,8 @@ public class pruebaTapuntas {
                         año = Integer.parseInt(in.nextLine());
                         fechaInicio = new GregorianCalendar(año,mes-1,dia);
                         
-                        System.out.print("Fecha Fin:");                       
-                        System.out.println("dia : ");
+                        System.out.println("Fecha Fin:");                       
+                        System.out.print("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
