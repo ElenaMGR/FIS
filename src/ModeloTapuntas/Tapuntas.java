@@ -77,8 +77,10 @@ public class Tapuntas {
         return misPlanesAlquiler;
     }
     
-    public ArrayList<String> consultarPerfil (String nombreUsuario){
-        return null;
+    public ArrayList<String> consultarPerfil (String nombreUsuario) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        ArrayList<String> infoPerfil = usuario.consultarPerfil();
+        return infoPerfil;
     }
     
     public void ofertarPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, String matricula){
