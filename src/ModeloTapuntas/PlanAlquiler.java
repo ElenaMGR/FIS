@@ -65,4 +65,8 @@ public class PlanAlquiler {
         return ultimoDiaAlquiler;
     }
     
+    boolean getVisibilidad(){
+        return visible;
+    }
+    
 }
