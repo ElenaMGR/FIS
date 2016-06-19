@@ -33,6 +33,7 @@ class Usuario {
       
       vehiculos = new ArrayList<>();
       planesAlquiler = new ArrayList<>();
+      preferenciaCobro = new ArrayList<>();
       modificarVisibilidad(false);
     }
     
