@@ -22,6 +22,7 @@ public class PlanAlquiler {
     private String ciudadRecogida;
     private Vehiculo vehiculo;
     
+    //Contructor
     PlanAlquiler(Vehiculo unVehiculo, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida){
        this.vehiculo= vehiculo;
        primerDiaAlquiler = fechaInicio;
@@ -30,6 +31,7 @@ public class PlanAlquiler {
        modificarVisibilidad(false);
     }
     
+    //Obtiene los datos del plan de alquiler
     ArrayList<String> obtenerdatosPA(){
         ArrayList<String> datosPA = new ArrayList<>();
         datosPA.add(costeAlquilerAlDia+"");
@@ -43,10 +45,12 @@ public class PlanAlquiler {
         return datosPA;
     }
     
+    //Elimina el vehiculo
     void eliminarVehiculo (){
         vehiculo=null;
     }
     
+    //Obtiene los datos del plan de alquiler
     ArrayList<String> obtenerdatosPlanAlquiler(){
         ArrayList<String> datosPlanAlquiler = new ArrayList<>();
         datosPlanAlquiler.add(vehiculo.obtenerMatricula());
@@ -64,26 +68,32 @@ public class PlanAlquiler {
         return datosPlanAlquiler;
     }
     
+    //Modifica la visibilidad
     void modificarVisibilidad (boolean visible){
         this.visible=visible;
     }
     
+    //Devuelve la ciudad de recogida
     String ciudadRecogida(){
         return ciudadRecogida;
     }
     
+    //Devuelve el primer dia de alquiler
     GregorianCalendar primerDiaAlqquiler(){
         return primerDiaAlquiler;
     }
     
+    //Devuelve el ultimo dia de alquiler
     GregorianCalendar ultimoDiaAlqquiler(){
         return ultimoDiaAlquiler;
     }
     
+    //Devuelve la visibilidad del plan de alquiler
     boolean getVisibilidad(){
         return visible;
     }
     
+    //Devuelve si el plan de alquiler está vigente
     boolean vigente(){
         boolean vigente= false;
         
@@ -95,6 +105,7 @@ public class PlanAlquiler {
         return vigente;
     }
     
+    //Devuelve la matricula del vehiculo
     String getMatricula(){
         return vehiculo.obtenerMatricula();
     }
