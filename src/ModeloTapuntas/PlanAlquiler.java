@@ -29,10 +29,10 @@ public class PlanAlquiler {
     }
     
     ArrayList<String> obtenerdatosPA(){
-        ArrayList<String> datosPA = new ArrayList<String>();
+        ArrayList<String> datosPA = new ArrayList<>();
         datosPA.add(costeAlquilerAlDia+"");
         
-        ArrayList<String> datosVehiculo = new ArrayList<String>();
+        ArrayList<String> datosVehiculo = new ArrayList<>();
         datosVehiculo = vehiculo.obtenerDatosVehiculo();
         for (int i=0; i<datosVehiculo.size(); i++){
             datosPA.add(datosVehiculo.get(i));
