@@ -225,6 +225,14 @@ public class pruebaTapuntas {
                     break;             
                   
                     case 22: /* Eliminar vehículo  */
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario =in.nextLine();
+                                       
+                        System.out.print("Matricula:");
+                        matricula= in.nextLine();
+                       
+                        aViajar.eliminarVehiculoPropietario(nombreUsuario, matricula);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                                     
                     break;
   
