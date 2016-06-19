@@ -52,8 +52,9 @@ public class Tapuntas {
         usuario.definirPlanAlquiler(matricula , fechaInicio, FechaFin, ciudadRecogida);
     }
     
-    public void eliminarVehiculoPropietario(String nombreUsuario, String matricula){
-        
+    public void eliminarVehiculoPropietario(String nombreUsuario, String matricula) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        usuario.eliminarVehiculo(matricula);
     }
     
     public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion, ArrayList<TipoTransaccion> preferenciasCobro) throws Exception{
