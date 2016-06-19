@@ -88,7 +88,10 @@ class Vehiculo {
     }
     
     void eliminarVehiculoAlquileres(){
-        
+        for (int i=0; i<planesAlquiler.size(); i++){
+            PlanAlquiler pa = planesAlquiler.get(i);
+            pa.eliminarVehiculo();
+        }
     }
     
     String obtenerMatricula(){
