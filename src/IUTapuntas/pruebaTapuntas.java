@@ -18,6 +18,11 @@ public class pruebaTapuntas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //Variables usuario
+        String nombreUsuario, claveUsuario, correoUsuario;
+        //Variables vehiculo
+        String matricula, marca, modelo, color, categoria, confor;
+        int numeroPlazas;
         
      
         // Obtener la única instancia de la clase BuenProvecho (patrón sigleton)
@@ -63,13 +68,13 @@ public class pruebaTapuntas {
                     case 10: //incluir un nuevo usuario en el sistema 
                                             
                         System.out.print("Nombre de Usaurio:");
-                        String nombreUsuario =in.nextLine();
+                        nombreUsuario =in.nextLine();
                                        
                         System.out.print("Clave:");
-                        String claveUsuario= in.nextLine();
+                        claveUsuario= in.nextLine();
                         
                         System.out.print("Dirección de correo:");
-                        String correoUsuario= in.nextLine();
+                        correoUsuario= in.nextLine();
                         
                         aViajar.altaRegistro(nombreUsuario, claveUsuario, correoUsuario);                                             
                         System.out.print("++++++  Operación realizada con éxito ++++++");
@@ -86,7 +91,37 @@ public class pruebaTapuntas {
                                                                    
                     break;
                 
-                    case 20: /*Nuevo vehículo */                         
+                    case 20: /*Nuevo vehículo */ 
+                        //String nombreUsuario,String matricula, String marca, 
+                        //String modelo, String color, int numeroPlazas, String categoria, 
+                        //String confor
+
+                        System.out.print("Nombre de Usaurio:");
+                        nombreUsuario =in.nextLine();
+                                       
+                        System.out.print("Matricula:");
+                        matricula= in.nextLine();
+                        
+                        System.out.print("Marca:");
+                        marca = in.nextLine();
+                        
+                        System.out.print("Modelo:");
+                        modelo = in.nextLine();
+                        
+                        System.out.print("Color:");
+                        color = in.nextLine();
+                        
+                        System.out.print("Numero de Plazas:");
+                        numeroPlazas = Integer.valueOf(in.nextLine());
+                        
+                        System.out.print("Categoría:");
+                        categoria = in.nextLine();
+                        
+                        System.out.print("Confor:");
+                        confor = in.nextLine();
+                        
+                        aViajar.añadirVehiculo(nombreUsuario, matricula, marca, modelo, color, numeroPlazas, categoria, confor);                                             
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                                      
                     break;
                   

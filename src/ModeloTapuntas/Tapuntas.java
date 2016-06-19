@@ -40,7 +40,7 @@ public class Tapuntas {
         usuario.nuevoVehiculo(matricula,marca,modelo,color,numeroPlazas,categoria,confor);
     }
     
-    public ArrayList<PlanAlquiler> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
+    public ArrayList<ArrayList<String>> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
         ArrayList<ArrayList<String>> datosPAUsuario = new ArrayList<ArrayList<String>>();
         
         Iterator it = usuarios.entrySet().iterator();
@@ -49,7 +49,7 @@ public class Tapuntas {
             datosPAUsuario.add(pair.getValue().obtenerPlanesQueCumplanRequisitos(ciudadRecogida, fechaInicio, fechaFin));
         }
         
-        return null; 
+        return datosPAUsuario; 
     }
     
     public void definirPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida){
