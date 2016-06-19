@@ -6,6 +6,8 @@
 package IUTapuntas;
 
 import ModeloTapuntas.Tapuntas;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
@@ -23,6 +25,10 @@ public class pruebaTapuntas {
         //Variables vehiculo
         String matricula, marca, modelo, color, categoria, confor;
         int numeroPlazas;
+        //Variables plan alquiler
+        String ciudadRecogida;
+        int dia, mes, año;
+        GregorianCalendar fechaInicio, fechaFin;
         
      
         // Obtener la única instancia de la clase BuenProvecho (patrón sigleton)
@@ -147,6 +153,37 @@ public class pruebaTapuntas {
                     break;
 
                     case 33: /* Buscar ofertas de planes de alquiler  */
+                        ArrayList<ArrayList<String>> ofertasAlquiler = new ArrayList<ArrayList<String>>();
+                        ArrayList<String> pa = new ArrayList<String>();
+                        System.out.print("Ciudad de Recogida:");
+                        ciudadRecogida = in.nextLine();
+                        
+                        System.out.print("Fecha de Inicio:");                        
+                        System.out.print("dia : ");
+                        dia= Integer.parseInt(in.nextLine());
+                        System.out.print("mes : ");
+                        mes=Integer.parseInt(in.nextLine());
+                        System.out.print("año : ");
+                        año = Integer.parseInt(in.nextLine());
+                        fechaInicio = new GregorianCalendar(año,mes-1,dia);
+                        
+                        System.out.print("Fecha Fin:");                       
+                        System.out.print("dia : ");
+                        dia= Integer.parseInt(in.nextLine());
+                        System.out.print("mes : ");
+                        mes=Integer.parseInt(in.nextLine());
+                        System.out.print("año : ");
+                        año = Integer.parseInt(in.nextLine());
+                        fechaFin = new GregorianCalendar(año,mes-1,dia);
+                        
+                        ofertasAlquiler = aViajar.buscarOfertasAlquiler(ciudadRecogida, fechaInicio, fechaFin);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
+                        for (int i=0; i<ofertasAlquiler.size() ; i++){
+                            pa = ofertasAlquiler.get(i);
+                            for (int j=0; j<pa.size(); j++){
+                                System.out.println(pa.toString());
+                            }
+                        }
 
                     break;                 
 

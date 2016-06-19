@@ -21,7 +21,11 @@ public class PlanAlquiler {
     private Vehiculo vehiculo;
     
     PlanAlquiler(Vehiculo unVehiculo, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida){
-       
+       this.vehiculo= vehiculo;
+       primerDiaAlquiler = fechaInicio;
+       ultimoDiaAlquiler = fechaFin;
+       this.ciudadRecogida = ciudadRecogida;
+       visible=false;
     }
     
     ArrayList<String> obtenerdatosPA(){
