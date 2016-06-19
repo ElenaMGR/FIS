@@ -95,4 +95,7 @@ public class PlanAlquiler {
         return vigente;
     }
     
+    String getMatricula(){
+        return vehiculo.obtenerMatricula();
+    }
 }
