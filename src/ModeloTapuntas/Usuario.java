@@ -67,19 +67,21 @@ class Usuario {
     }
     
     void definirPlanAlquiler (String matricula, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida) throws Exception{
-        boolean disponible = false;
         Vehiculo vehiculo = buscarVehiculo(matricula);
         
-        if(vehiculo != null)
-            disponible = vehiculo.estasDisponible(fechaInicio, fechaFin);
+        if (vehiculo == null){
+            throw new Exception("el vehículo no existe");
+        }
         
-        if(vehiculo == null || !disponible )
-            throw new Exception("el vehículo ya pertenece plan alquiler en esa fechas o no existe");
+        boolean disponible = vehiculo.estasDisponible(fechaInicio, fechaFin);
+        
+        if(!disponible )
+            throw new Exception("el vehículo ya pertenece plan alquiler en esa fechas");
         
         PlanAlquiler miPlanAlquiler = new PlanAlquiler(vehiculo, fechaInicio, fechaFin, ciudadRecogida);
-        //vehiculo.incluirPlanAlquiler(miPlanAlquiler);
+        vehiculo.incluirPlanAlquiler(miPlanAlquiler);
                         
-        //misPlanesAlquiler.add(miPlanAlquiler);      
+        planesAlquiler.add(miPlanAlquiler);      
  
     }
     

@@ -49,11 +49,25 @@ class Vehiculo {
     }
         
     boolean estasDisponible (GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        return false;
+        boolean disponible = true;
+        PlanAlquiler pa;
+        for (int i=0; i<planesAlquiler.size() && disponible; i++){
+            pa = planesAlquiler.get(i);
+            GregorianCalendar primerDia = pa.primerDiaAlqquiler();
+            GregorianCalendar ultimoDia = pa.ultimoDiaAlqquiler();
+            
+            //Compruebo si coinciden las fechas
+            if ((fechaInicio.after(primerDia) && fechaInicio.before(ultimoDia)) ||
+                    fechaFin.after(primerDia) && fechaFin.before(ultimoDia))             
+               disponible = false;
+           
+        }
+        
+        return disponible;
     }
     
-    void incluirPlanAlquiler(){
-        
+    void incluirPlanAlquiler(PlanAlquiler pa){
+        planesAlquiler.add(pa);
     }
     
     boolean comprobarEstadoAlquileres(){

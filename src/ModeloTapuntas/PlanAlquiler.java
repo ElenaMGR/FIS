@@ -25,7 +25,7 @@ public class PlanAlquiler {
        primerDiaAlquiler = fechaInicio;
        ultimoDiaAlquiler = fechaFin;
        this.ciudadRecogida = ciudadRecogida;
-       visible=false;
+       modificarVisibilidad(false);
     }
     
     ArrayList<String> obtenerdatosPA(){
