@@ -85,7 +85,17 @@ class Usuario {
  
     }
     
-    void eliminarVehiculo (String matricula){
+    void eliminarVehiculo (String matricula) throws Exception{
+        Vehiculo vehiculo = buscarVehiculo(matricula);
+        boolean alquilado = vehiculo.comprobarEstadoAlquileres();
+        
+        if (!alquilado){
+            vehiculo.eliminarVehiculoAlquileres();
+        }else{
+           throw new Exception("el vehículo no se puede eliminar, tiene vigentes alquileres o viajes"); 
+        }
+        
+        vehiculos.remove(vehiculo);
         
     }
     
