@@ -186,8 +186,12 @@ public class pruebaTapuntas {
                         System.out.print("Nombre de Usuario:");
                         nombreUsuario =in.nextLine();
                         
-                        aViajar.consultarPerfil(nombreUsuario);
+                        ArrayList<String> infoPerfil = aViajar.consultarPerfil(nombreUsuario);
                         System.out.print("++++++  Operación realizada con éxito ++++++");
+                        
+                        for (int i=0; i<infoPerfil.size(); i++){
+                            System.out.println(infoPerfil.get(i).toString());
+                        }
                                                                    
                     break;
                 
