@@ -31,6 +31,7 @@ class Usuario {
       this.contraseña = contraseña;
       this.direccionCorreo = direccionCorreo;
       
+      vehiculos = new ArrayList<Vehiculo>();
       modificarVisibilidad(false);
     }
     
@@ -89,7 +90,14 @@ class Usuario {
     }
     
     Vehiculo buscarVehiculo (String matricula){
-        return null;
+        Vehiculo vehiculo = null;
+        boolean encontrado = false;
+        for (int i=0; i<vehiculos.size() && !encontrado; i++){
+            vehiculo = vehiculos.get(i);
+            if (vehiculo.obtenerMatricula().equals(matricula))
+                encontrado = true;
+        }
+        return vehiculo;
     }
     
     PlanAlquiler buscarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){

@@ -29,13 +29,8 @@ public class Tapuntas {
     }
     
     public void añadirVehiculo(String nombreUsuario,String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor) throws Exception{
-        Vehiculo vehiculo = null;
-        Iterator it = usuarios.entrySet().iterator();
-        while (it.hasNext() && vehiculo == null) {
-            Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
-            vehiculo = pair.getValue().buscarVehiculo(matricula);
-        }
-        if(vehiculo == null) throw new Exception("ya existe otro vehículo en el sistema con esa matrícula");
+        boolean existe = existeVehiculo(matricula);
+        if(existe) throw new Exception("ya existe otro vehículo en el sistema con esa matrícula");
         Usuario usuario = buscarUsuario(nombreUsuario);
         usuario.nuevoVehiculo(matricula,marca,modelo,color,numeroPlazas,categoria,confor);
     }
@@ -80,16 +75,32 @@ public class Tapuntas {
         return false;
     }
     
-    private Usuario buscarUsuario (String nombreUsuario){
-       return null; 
+    private Usuario buscarUsuario (String nombreUsuario) throws Exception{
+        Usuario usuario = null;
+        usuario = usuarios.get(nombreUsuario);
+        if(usuario == null) throw new Exception("usuario no encontrado");
+        return usuario;
     }
+    
     
     private void ordenarOfertas (ArrayList<String> listaOfertas){
         
     }
     
     private boolean existeVehiculo (String matricula){
-        return false;
+        boolean existe = false;
+        
+        Vehiculo vehiculo = null;
+        Iterator it = usuarios.entrySet().iterator();
+        while (it.hasNext() && vehiculo != null) {
+            Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
+            vehiculo = pair.getValue().buscarVehiculo(matricula);
+        }
+        
+        if (vehiculo != null)
+            existe = true;
+        
+        return existe;
     }
     
 }

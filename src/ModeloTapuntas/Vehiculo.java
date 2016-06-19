@@ -56,7 +56,7 @@ class Vehiculo {
         
     }
     
-    void obtenerMatricula(){
-        
+    String obtenerMatricula(){
+        return matricula;
     }
 }
