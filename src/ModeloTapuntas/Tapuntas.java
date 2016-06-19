@@ -47,8 +47,9 @@ public class Tapuntas {
         return datosPAUsuario; 
     }
     
-    public void definirPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida){
-        
+    public void definirPlanAlquiler(String nombreUsuario, String matricula, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        usuario.definirPlanAlquiler(matricula , fechaInicio, FechaFin, ciudadRecogida);
     }
     
     public void eliminarVehiculoPropietario(String nombreUsuario, String matricula){
