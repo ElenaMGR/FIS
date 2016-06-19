@@ -42,7 +42,7 @@ public class PlanAlquiler {
     }
     
     void eliminarVehiculo (){
-        
+        vehiculo=null;
     }
     
     ArrayList<String> obtenerdatosPlanAlquiler(){
