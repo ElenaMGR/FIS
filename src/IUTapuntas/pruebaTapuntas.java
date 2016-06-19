@@ -271,6 +271,11 @@ public class pruebaTapuntas {
                     break;
 
                     case 31: /* Consultar planes de alquiler de un usuario */
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario =in.nextLine();
+                        
+                        aViajar.obtenerPlanesAlquiler(nombreUsuario);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                                 
                     break;
 
