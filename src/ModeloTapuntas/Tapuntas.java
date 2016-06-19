@@ -55,7 +55,7 @@ public class Tapuntas {
         
     }
     
-    public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion){
+    public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion, ArrayList<TipoTransaccion> preferenciasCobro){
         
     }
     

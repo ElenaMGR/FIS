@@ -6,6 +6,7 @@
 package IUTapuntas;
 
 import ModeloTapuntas.Tapuntas;
+import ModeloTapuntas.TipoTransaccion;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -21,7 +22,9 @@ public class pruebaTapuntas {
      */
     public static void main(String[] args) {
         //Variables usuario
-        String nombreUsuario, claveUsuario, correoUsuario;
+        String nombreUsuario, claveUsuario, correoUsuario, nombre, telefono, breveDescripcion;
+        int preferencia;
+        ArrayList<TipoTransaccion> preferenciasCobro;
         //Variables vehiculo
         String matricula, marca, modelo, color, categoria, confor;
         int numeroPlazas;
@@ -91,6 +94,92 @@ public class pruebaTapuntas {
                     break;
                     
                     case 12:/*Incluir Perfil */
+                        preferenciasCobro = new ArrayList<>();
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario =in.nextLine();
+                                       
+                        System.out.print("Nombre:");
+                        nombre= in.nextLine();
+                        
+                        System.out.print("Teléfono:");
+                        telefono= in.nextLine();
+                        
+                        System.out.print("Breve descripción:");
+                        breveDescripcion= in.nextLine();
+                        
+                        System.out.println("Preferencias de Cobro:");
+                        System.out.println("Indique de mayor a menor preferencia de uno en uno:");
+                        System.out.println("1 - TARJETA");
+                        System.out.println("2 - PAYPAL");
+                        System.out.println("3 - EFECTIVO");
+                        System.out.println("4 - TRANSFERENCIA");   
+                        System.out.print("Introduce número (1-4):");
+                        preferencia = Integer.parseInt(in.nextLine());
+                        switch (preferencia) {
+                            case 1:
+                                preferenciasCobro.add(TipoTransaccion.TARJETA);
+                                break;
+                            case 2:
+                                preferenciasCobro.add(TipoTransaccion.PAYPAL);
+                                break;
+                            case 3:
+                                preferenciasCobro.add(TipoTransaccion.EFECTIVO);
+                                break;
+                            default:
+                                preferenciasCobro.add(TipoTransaccion.TRANSFERENCIA);
+                                break;
+                        }
+                        System.out.print("Introduce número (1-4):");
+                        preferencia = Integer.parseInt(in.nextLine());
+                        switch (preferencia) {
+                            case 1:
+                                preferenciasCobro.add(TipoTransaccion.TARJETA);
+                                break;
+                            case 2:
+                                preferenciasCobro.add(TipoTransaccion.PAYPAL);
+                                break;
+                            case 3:
+                                preferenciasCobro.add(TipoTransaccion.EFECTIVO);
+                                break;
+                            default:
+                                preferenciasCobro.add(TipoTransaccion.TRANSFERENCIA);
+                                break;
+                        }
+                        System.out.print("Introduce número (1-4):");
+                        preferencia = Integer.parseInt(in.nextLine());
+                        switch (preferencia) {
+                            case 1:
+                                preferenciasCobro.add(TipoTransaccion.TARJETA);
+                                break;
+                            case 2:
+                                preferenciasCobro.add(TipoTransaccion.PAYPAL);
+                                break;
+                            case 3:
+                                preferenciasCobro.add(TipoTransaccion.EFECTIVO);
+                                break;
+                            default:
+                                preferenciasCobro.add(TipoTransaccion.TRANSFERENCIA);
+                                break;
+                        }
+                        System.out.print("Introduce número (1-4):");
+                        preferencia = Integer.parseInt(in.nextLine());
+                        switch (preferencia) {
+                            case 1:
+                                preferenciasCobro.add(TipoTransaccion.TARJETA);
+                                break;
+                            case 2:
+                                preferenciasCobro.add(TipoTransaccion.PAYPAL);
+                                break;
+                            case 3:
+                                preferenciasCobro.add(TipoTransaccion.EFECTIVO);
+                                break;
+                            default:
+                                preferenciasCobro.add(TipoTransaccion.TRANSFERENCIA);
+                                break;
+                        }
+                        
+                        aViajar.introducirPerfil(nombreUsuario, nombre, telefono, breveDescripcion, preferenciasCobro);                                             
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                                                 
                     break;
                     case 13:/*Consultar perfil */
@@ -159,7 +248,7 @@ public class pruebaTapuntas {
                         ciudadRecogida = in.nextLine();
                         
                         System.out.print("Fecha de Inicio:");                        
-                        System.out.print("dia : ");
+                        System.out.println("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
@@ -168,7 +257,7 @@ public class pruebaTapuntas {
                         fechaInicio = new GregorianCalendar(año,mes-1,dia);
                         
                         System.out.print("Fecha Fin:");                       
-                        System.out.print("dia : ");
+                        System.out.println("dia : ");
                         dia= Integer.parseInt(in.nextLine());
                         System.out.print("mes : ");
                         mes=Integer.parseInt(in.nextLine());
