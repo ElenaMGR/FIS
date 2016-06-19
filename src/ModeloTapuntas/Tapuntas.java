@@ -70,9 +70,9 @@ public class Tapuntas {
         return tienePerfil;
     }
     
-    public ArrayList<String> obtenerPlanesAlquiler (String nombreUsuario) throws Exception{
+    public ArrayList<ArrayList<String>> obtenerPlanesAlquiler (String nombreUsuario) throws Exception{
         Usuario usuario = buscarUsuario(nombreUsuario);
-        ArrayList<String> misPlanesAlquiler = usuario.obtenerPlanesAlquiler();
+        ArrayList<ArrayList<String>> misPlanesAlquiler = usuario.obtenerPlanesAlquiler();
         
         return misPlanesAlquiler;
     }
