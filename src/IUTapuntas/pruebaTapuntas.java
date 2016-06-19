@@ -194,10 +194,11 @@ public class pruebaTapuntas {
                         nombreUsuario =in.nextLine();
                         
                         ArrayList<String> infoPerfil = aViajar.consultarPerfil(nombreUsuario);
-                        System.out.print("++++++  Operación realizada con éxito ++++++");
+                        System.out.println("++++++  Operación realizada con éxito ++++++");
                         
                         for (int i=0; i<infoPerfil.size(); i++){
-                            System.out.println(infoPerfil.get(i).toString());
+                            if (infoPerfil.get(i)!=null)
+                                System.out.println(infoPerfil.get(i).toString());
                         }
                                                                    
                     break;
@@ -291,14 +292,15 @@ public class pruebaTapuntas {
                         nombreUsuario =in.nextLine();
                         
                         aViajar.obtenerPlanesAlquiler(nombreUsuario);
-                        System.out.print("++++++  Operación realizada con éxito ++++++");
+                        System.out.println("++++++  Operación realizada con éxito ++++++");
                         
                         ArrayList<ArrayList<String>> planesAlquiler = new ArrayList<>();
                         ArrayList<String> pa = new ArrayList<>();
                         for (int i=0; i<planesAlquiler.size() ; i++){
                             pa = planesAlquiler.get(i);
                             for (int j=0; j<pa.size(); j++){
-                                System.out.println(pa.toString());
+                                if (pa!=null)
+                                    System.out.println(pa.toString());
                             }
                         }
                                                 
@@ -350,11 +352,12 @@ public class pruebaTapuntas {
                         fechaFin = new GregorianCalendar(año,mes-1,dia);
                         
                         ofertasAlquiler = aViajar.buscarOfertasAlquiler(ciudadRecogida, fechaInicio, fechaFin);
-                        System.out.print("++++++  Operación realizada con éxito ++++++");
+                        System.out.println("++++++  Operación realizada con éxito ++++++");
                         for (int i=0; i<ofertasAlquiler.size() ; i++){
                             pa = ofertasAlquiler.get(i);
                             for (int j=0; j<pa.size(); j++){
-                                System.out.println(pa.toString());
+                                if (pa != null)
+                                    System.out.println(pa.toString());
                             }
                         }
 
