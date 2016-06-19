@@ -83,12 +83,17 @@ public class Tapuntas {
         return infoPerfil;
     }
     
-    public void ofertarPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, String matricula){
-        
+    public void ofertarPlanAlquiler(String nombreUsuario, GregorianCalendar fechaInicio, String matricula) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        usuario.ofertarPlanAlquiler(fechaInicio, matricula);
     }
     
     private boolean existeUsuario (String nombreUsuario){
-        return false;
+        boolean existe = false;
+        Usuario usuario = null;
+        usuario = usuarios.get(nombreUsuario);
+        if(usuario != null) existe = true;
+        return existe;
     }
     
     private Usuario buscarUsuario (String nombreUsuario) throws Exception{
