@@ -26,6 +26,7 @@ class Usuario {
     private ArrayList<PlanAlquiler> planesAlquiler;
     private ArrayList<Vehiculo> vehiculos;
 
+    //Constructor
     Usuario(String nombreUsuario, String contraseña, String direccionCorreo) {
       this.nombreUsuario= nombreUsuario;
       this.contraseña = contraseña;
@@ -37,15 +38,18 @@ class Usuario {
       modificarVisibilidad(false);
     }
     
+    //Método para modificar la visibilidad del usuario
     void modificarVisibilidad(boolean visibilidad){
         this.visibilidad=visibilidad;
     }
     
+    //Añade un nuevo vehiculo
     void nuevoVehiculo (String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor){
         Vehiculo vehiculo = new Vehiculo (matricula,marca,modelo,color,numeroPlazas,categoria,confor);
         vehiculos.add(vehiculo);
     }
     
+    //Obtiene los planes de alquiler que cumplen unos determinados requisitos
     ArrayList<String> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
         ArrayList<String> datosPAUsuario = new ArrayList<>();
         datosPAUsuario.add(nombre);
@@ -67,6 +71,7 @@ class Usuario {
         return datosPAUsuario;
     }
     
+    //Define un plan de alquiler
     void definirPlanAlquiler (String matricula, GregorianCalendar fechaInicio, GregorianCalendar fechaFin, String ciudadRecogida) throws Exception{
         Vehiculo vehiculo = buscarVehiculo(matricula);
         
@@ -86,6 +91,7 @@ class Usuario {
  
     }
     
+    //Elimina un vehiculo
     void eliminarVehiculo (String matricula) throws Exception{
         Vehiculo vehiculo = buscarVehiculo(matricula);
         boolean alquilado = vehiculo.comprobarEstadoAlquileres();
@@ -100,6 +106,7 @@ class Usuario {
         
     }
     
+    //Introduce el perfil del usuario
     void introducirPerfil (String nombre, String telefono, String breceDescripcion, ArrayList<TipoTransaccion> preferenciaCobro){
         this.nombre=nombre;
         this.telefono=telefono;
@@ -108,6 +115,8 @@ class Usuario {
         modificarVisibilidad(true);
     }
     
+    
+    //Obtiene lso planes de alquiler del usuario
     ArrayList<ArrayList<String>> obtenerPlanesAlquiler (){
         ArrayList<ArrayList<String>> datosPlanAlquiler = new ArrayList<>();
         PlanAlquiler pa;
@@ -121,6 +130,7 @@ class Usuario {
         return datosPlanAlquiler;
     }
     
+    //Consulta el perfil del usuario
     ArrayList<String> consultarPerfil(){
         ArrayList<String> infoPerfil = new ArrayList<>();
         infoPerfil.add(nombre);
@@ -133,11 +143,13 @@ class Usuario {
         return infoPerfil;
     }
     
+    //Oferta un plan de alquiler
     void ofertarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
         PlanAlquiler pa = buscarPlanAlquiler(fechaInicio, matricula);
         pa.modificarVisibilidad(true);
     }
     
+    //Busca un determinado vehiculo
     Vehiculo buscarVehiculo (String matricula){
         Vehiculo vehiculo = null;
         boolean encontrado = false;
@@ -149,6 +161,7 @@ class Usuario {
         return vehiculo;
     }
     
+    //Busca un determinado plan de alquiler
     PlanAlquiler buscarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
         PlanAlquiler pa = null;
         boolean encontrado = false;
@@ -164,6 +177,7 @@ class Usuario {
         return pa;
     }
     
+    //Devuelve la visibilidad del usuario
     boolean getVisibilidad (){
         return visibilidad;
     }
