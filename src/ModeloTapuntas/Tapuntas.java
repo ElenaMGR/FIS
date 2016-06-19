@@ -55,8 +55,16 @@ public class Tapuntas {
         
     }
     
-    public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion, ArrayList<TipoTransaccion> preferenciasCobro){
-        
+    public void introducirPerfil(String nombreUsuario , String nombre, String telefono, String breveDescripcion, ArrayList<TipoTransaccion> preferenciasCobro) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        if(tienePerfilDefinido(nombreUsuario)) throw new Exception("el usuario ya tiene un perfil definido");
+        usuario.introducirPerfil(nombre, telefono, breveDescripcion, preferenciasCobro);
+    }
+    
+    private boolean tienePerfilDefinido(String nombreUsuario) throws Exception{
+        Usuario usuario = buscarUsuario(nombreUsuario);
+        boolean tienePerfil = usuario.getVisibilidad();
+        return tienePerfil;
     }
     
     public ArrayList<PlanAlquiler> obtenerPlanesAlquiler (String nombreUsuario){

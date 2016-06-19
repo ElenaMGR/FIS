@@ -104,4 +104,8 @@ class Usuario {
     PlanAlquiler buscarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
         return null;
     }
+    
+    boolean getVisibilidad (){
+        return visibilidad;
+    }
 }
