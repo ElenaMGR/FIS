@@ -69,4 +69,15 @@ public class PlanAlquiler {
         return visible;
     }
     
+    boolean vigente(){
+        boolean vigente= false;
+        
+        GregorianCalendar hoy = new GregorianCalendar();
+        if (hoy.before(ultimoDiaAlquiler)){
+            vigente = true;
+        }
+        
+        return vigente;
+    }
+    
 }
