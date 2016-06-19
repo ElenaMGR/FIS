@@ -36,7 +36,7 @@ public class Tapuntas {
     }
     
     public ArrayList<ArrayList<String>> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        ArrayList<ArrayList<String>> datosPAUsuario = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> datosPAUsuario = new ArrayList<>();
         
         Iterator it = usuarios.entrySet().iterator();
         while (it.hasNext()) {
