@@ -36,15 +36,16 @@ public class Tapuntas {
     }
     
     public ArrayList<ArrayList<String>> buscarOfertasAlquiler (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        ArrayList<ArrayList<String>> datosPAUsuario = new ArrayList<>();
+        ArrayList<ArrayList<String>> listaOfertas = new ArrayList<>();
         
         Iterator it = usuarios.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
-            datosPAUsuario.add(pair.getValue().obtenerPlanesQueCumplanRequisitos(ciudadRecogida, fechaInicio, fechaFin));
+            listaOfertas.add(pair.getValue().obtenerPlanesQueCumplanRequisitos(ciudadRecogida, fechaInicio, fechaFin));
         }
         
-        return datosPAUsuario; 
+        ordenarOfertas(listaOfertas);
+        return listaOfertas; 
     }
     
     public void definirPlanAlquiler(String nombreUsuario, String matricula, GregorianCalendar fechaInicio, GregorianCalendar FechaFin, String ciudadRecogida) throws Exception{
@@ -93,8 +94,8 @@ public class Tapuntas {
     }
     
     
-    private void ordenarOfertas (ArrayList<String> listaOfertas){
-        
+    private void ordenarOfertas (ArrayList<ArrayList<String>> listaOfertas){
+
     }
     
     private boolean existeVehiculo (String matricula){
