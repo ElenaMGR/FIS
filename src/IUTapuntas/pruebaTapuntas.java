@@ -230,6 +230,35 @@ public class pruebaTapuntas {
   
     
                     case 30: /* Nuevo plan de alquiler */
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario =in.nextLine();
+                                       
+                        System.out.print("Matricula:");
+                        matricula= in.nextLine();
+                        
+                        System.out.print("Ciudad de Recogida:");
+                        ciudadRecogida = in.nextLine();
+                        
+                        System.out.print("Fecha de Inicio:");                        
+                        System.out.println("dia : ");
+                        dia= Integer.parseInt(in.nextLine());
+                        System.out.print("mes : ");
+                        mes=Integer.parseInt(in.nextLine());
+                        System.out.print("año : ");
+                        año = Integer.parseInt(in.nextLine());
+                        fechaInicio = new GregorianCalendar(año,mes-1,dia);
+                        
+                        System.out.print("Fecha Fin:");                       
+                        System.out.println("dia : ");
+                        dia= Integer.parseInt(in.nextLine());
+                        System.out.print("mes : ");
+                        mes=Integer.parseInt(in.nextLine());
+                        System.out.print("año : ");
+                        año = Integer.parseInt(in.nextLine());
+                        fechaFin = new GregorianCalendar(año,mes-1,dia);
+               
+                        aViajar.definirPlanAlquiler(nombreUsuario, matricula, fechaInicio, fechaFin, ciudadRecogida);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                         
                     break;
 
