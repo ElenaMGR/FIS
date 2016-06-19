@@ -298,6 +298,23 @@ public class pruebaTapuntas {
                     break;
 
                     case 32: /* Ofertar un plan de alquiler */
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario = in.nextLine();
+                        
+                        System.out.println("Fecha de Inicio:");                        
+                        System.out.print("dia : ");
+                        dia= Integer.parseInt(in.nextLine());
+                        System.out.print("mes : ");
+                        mes=Integer.parseInt(in.nextLine());
+                        System.out.print("año : ");
+                        año = Integer.parseInt(in.nextLine());
+                        fechaInicio = new GregorianCalendar(año,mes-1,dia);
+                        
+                        System.out.print("Nombre de Matricula:");
+                        matricula = in.nextLine();
+                        
+                        aViajar.ofertarPlanAlquiler(nombreUsuario, fechaInicio, matricula);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                   
                     break;
 
