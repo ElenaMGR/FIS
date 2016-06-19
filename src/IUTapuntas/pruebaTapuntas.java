@@ -67,7 +67,7 @@ public class pruebaTapuntas {
                 switch(opcion){
                     case 10: //incluir un nuevo usuario en el sistema 
                                             
-                        System.out.print("Nombre de Usaurio:");
+                        System.out.print("Nombre de Usuario:");
                         nombreUsuario =in.nextLine();
                                        
                         System.out.print("Clave:");
@@ -96,7 +96,7 @@ public class pruebaTapuntas {
                         //String modelo, String color, int numeroPlazas, String categoria, 
                         //String confor
 
-                        System.out.print("Nombre de Usaurio:");
+                        System.out.print("Nombre de Usuario:");
                         nombreUsuario =in.nextLine();
                                        
                         System.out.print("Matricula:");
