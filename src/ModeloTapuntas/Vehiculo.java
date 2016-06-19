@@ -36,7 +36,7 @@ class Vehiculo {
     }
     
     ArrayList<String> obtenerDatosVehiculo(){
-        ArrayList<String> datosVehiculo = new ArrayList<String>();
+        ArrayList<String> datosVehiculo = new ArrayList<>();
         datosVehiculo.add(marca);
         datosVehiculo.add(modelo);
         datosVehiculo.add(confor);
