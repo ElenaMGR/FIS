@@ -92,7 +92,8 @@ public class Tapuntas {
         
         Vehiculo vehiculo = null;
         Iterator it = usuarios.entrySet().iterator();
-        while (it.hasNext() && vehiculo != null) {
+      
+        while (it.hasNext() && vehiculo == null) {
             Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
             vehiculo = pair.getValue().buscarVehiculo(matricula);
         }
