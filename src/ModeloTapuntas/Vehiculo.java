@@ -23,6 +23,7 @@ class Vehiculo {
     private String matricula;
     private ArrayList<PlanAlquiler> planesAlquiler;
     
+    //Constructor
     Vehiculo(String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor){
         this.matricula=matricula;
         this.marca=marca;
@@ -35,6 +36,7 @@ class Vehiculo {
         planesAlquiler= new ArrayList<PlanAlquiler>();
     }
     
+    //Obtiene los datos del vehiculo
     ArrayList<String> obtenerDatosVehiculo(){
         ArrayList<String> datosVehiculo = new ArrayList<>();
         datosVehiculo.add(marca);
@@ -47,7 +49,8 @@ class Vehiculo {
         
         return datosVehiculo;
     }
-        
+      
+    //Decuelve si un vehiculo esta disponible entre unas fechas
     boolean estasDisponible (GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
         boolean disponible = true;
         PlanAlquiler pa;
@@ -66,10 +69,12 @@ class Vehiculo {
         return disponible;
     }
     
+    //Incluye un plan de alquiler
     void incluirPlanAlquiler(PlanAlquiler pa){
         planesAlquiler.add(pa);
     }
     
+    //Comprueba el estado
     boolean comprobarEstadoAlquileres(){
         boolean alquilado = false;
         //Compruebo si coinciden las fechas
@@ -87,6 +92,7 @@ class Vehiculo {
         return alquilado;
     }
     
+    //Elimina la relacion entre un vehiculo y el plan de alquiler
     void eliminarVehiculoAlquileres(){
         for (int i=0; i<planesAlquiler.size(); i++){
             PlanAlquiler pa = planesAlquiler.get(i);
@@ -94,6 +100,7 @@ class Vehiculo {
         }
     }
     
+    //Obtniene la matricula de un vehiculo
     String obtenerMatricula(){
         return matricula;
     }
