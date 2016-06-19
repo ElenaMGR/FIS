@@ -31,7 +31,8 @@ class Usuario {
       this.contraseña = contraseña;
       this.direccionCorreo = direccionCorreo;
       
-      vehiculos = new ArrayList<Vehiculo>();
+      vehiculos = new ArrayList<>();
+      planesAlquiler = new ArrayList<>();
       modificarVisibilidad(false);
     }
     
@@ -45,15 +46,15 @@ class Usuario {
     }
     
     ArrayList<String> obtenerPlanesQueCumplanRequisitos (String ciudadRecogida, GregorianCalendar fechaInicio, GregorianCalendar fechaFin){
-        ArrayList<String> datosPAUsuario = new ArrayList<String>();
+        ArrayList<String> datosPAUsuario = new ArrayList<>();
         datosPAUsuario.add(nombre);
         datosPAUsuario.add(preferenciaCobro.toString());
-        ArrayList<String> datosPA = new ArrayList<String>();
+        ArrayList<String> datosPA = new ArrayList<>();
         
         PlanAlquiler pa;
         for (int i=0; i<planesAlquiler.size(); i++){
             pa = planesAlquiler.get(i);
-            if (ciudadRecogida == pa.ciudadRecogida() && !(fechaInicio.before(pa.primerDiaAlqquiler())) && !(fechaFin.after(pa.ultimoDiaAlqquiler()))){
+            if (ciudadRecogida.equals(pa.ciudadRecogida()) && !(fechaInicio.before(pa.primerDiaAlqquiler())) && !(fechaFin.after(pa.ultimoDiaAlqquiler()))){
                 datosPA = pa.obtenerdatosPA();
             }
         }
