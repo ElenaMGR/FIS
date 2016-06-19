@@ -183,6 +183,11 @@ public class pruebaTapuntas {
                                                                 
                     break;
                     case 13:/*Consultar perfil */
+                        System.out.print("Nombre de Usuario:");
+                        nombreUsuario =in.nextLine();
+                        
+                        aViajar.consultarPerfil(nombreUsuario);
+                        System.out.print("++++++  Operación realizada con éxito ++++++");
                                                                    
                     break;
                 
