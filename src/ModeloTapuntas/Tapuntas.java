@@ -138,4 +138,16 @@ public class Tapuntas {
         return existe;
     }
     
+    public ArrayList<String> consultarUsuarios(){
+        ArrayList<String> listaUsuarios = new ArrayList<>();
+        
+        Iterator it = usuarios.entrySet().iterator();
+      
+        while (it.hasNext()) {
+            Map.Entry<String, Usuario> pair = (Map.Entry<String, Usuario>) it.next();
+            listaUsuarios.add(pair.getKey());
+        }
+        
+        return listaUsuarios;
+    }
 }

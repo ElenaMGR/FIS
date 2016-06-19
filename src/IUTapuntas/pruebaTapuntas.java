@@ -90,6 +90,13 @@ public class pruebaTapuntas {
                     break;  
                     
                     case 11:/*Ver usuarios del sistema */
+                        ArrayList<String> listaUsuarios = aViajar.consultarUsuarios();                                             
+                        System.out.println("++++++  Operación realizada con éxito ++++++");
+                        
+                        for (int i=0; i<listaUsuarios.size(); i++){
+                            if (listaUsuarios.get(i)!=null)
+                                System.out.println(listaUsuarios.get(i).toString());
+                        }
                                                                      
                     break;
                     
