@@ -24,7 +24,15 @@ class Vehiculo {
     private ArrayList<PlanAlquiler> planesAlquiler;
     
     Vehiculo(String matricula, String marca, String modelo, String color, int numeroPlazas, String categoria, String confor){
+        this.matricula=matricula;
+        this.marca=marca;
+        this.modelo=modelo;
+        this.confor=confor;
+        this.categoria=categoria;
+        this.color=color;
+        this.numeroPlazas=numeroPlazas;
         
+        planesAlquiler= new ArrayList<PlanAlquiler>();
     }
     
     ArrayList<String> obtenerDatosVehiculo(){
