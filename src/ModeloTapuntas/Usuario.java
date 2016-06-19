@@ -122,7 +122,15 @@ class Usuario {
     }
     
     ArrayList<String> consultarPerfil(){
-        return null;
+        ArrayList<String> infoPerfil = new ArrayList<>();
+        infoPerfil.add(nombre);
+        infoPerfil.add(telefono);
+        infoPerfil.add(breveDescripcionPersonal);
+        if (visibilidad)
+            infoPerfil.add("Visile: sí");
+        else
+            infoPerfil.add("Visile: no");
+        return infoPerfil;
     }
     
     void ofertarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
