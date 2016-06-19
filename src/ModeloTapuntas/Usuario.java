@@ -127,9 +127,9 @@ class Usuario {
         infoPerfil.add(telefono);
         infoPerfil.add(breveDescripcionPersonal);
         if (visibilidad)
-            infoPerfil.add("Visile: sí");
+            infoPerfil.add("Visible: sí");
         else
-            infoPerfil.add("Visile: no");
+            infoPerfil.add("Visible: no");
         return infoPerfil;
     }
     
