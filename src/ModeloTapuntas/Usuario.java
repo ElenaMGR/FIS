@@ -150,7 +150,18 @@ class Usuario {
     }
     
     PlanAlquiler buscarPlanAlquiler (GregorianCalendar fechaInicio, String matricula){
-        return null;
+        PlanAlquiler pa = null;
+        boolean encontrado = false;
+        for (int i=0; i<planesAlquiler.size() && !encontrado; i++){
+            pa = planesAlquiler.get(i);
+            if (fechaInicio.equals(pa.primerDiaAlqquiler()) && matricula.equals(pa.getMatricula())){
+                encontrado = true;
+            }
+        }
+        
+        if (!encontrado)
+            pa = null;
+        return pa;
     }
     
     boolean getVisibilidad (){
